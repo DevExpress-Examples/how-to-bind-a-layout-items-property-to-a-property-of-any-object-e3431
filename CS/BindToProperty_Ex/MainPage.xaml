@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="BindToProperty_Ex.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking" 
+    mc:Ignorable="d"
+    d:DesignHeight="187" d:DesignWidth="400">
+
+    <dxd:DockLayoutManager x:Name="dm1">
+        <dxd:LayoutGroup Orientation="Vertical">
+            <dxd:LayoutPanel x:Name="panel1" Caption="Panel 1" Height="70">
+                <dxd:LayoutGroup Orientation="Vertical">
+                    <dxd:LayoutControlItem Caption="Type any text">
+                        <TextBox x:Name="myTextEdit" />
+                    </dxd:LayoutControlItem>
+                </dxd:LayoutGroup>
+            </dxd:LayoutPanel>
+
+            <dxd:LayoutPanel x:Name="panelTypedText" Caption="Your Text" Height="70">
+                <dxd:LayoutGroup Orientation="Vertical">
+                    <!--Define a label that should display the same text as the myTextEdit-->
+                    <!--The following binding statement for the LabelItem.Caption property doesn't work. Instead, the LabelItem.Caption property must be bound in code-->
+                    <!--<dxd:LabelItem x:Name="myLabel" Caption="{Binding Text, ElementName=myTextEdit}"/>-->
+                    <dxd:LabelItem Name="myLabel" Caption="" />
+                </dxd:LayoutGroup>
+            </dxd:LayoutPanel>
+        </dxd:LayoutGroup>
+    </dxd:DockLayoutManager>
+</UserControl>
